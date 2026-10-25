@@ -14,7 +14,7 @@ relations:
   derives_from: []
   governed_by: []
   implements: []
-  affects: [arch/02-concept/active/RFC-0001-workflow-lifecycle.md]
+  affects: [arch/02-concept/active/RFC-0001-workflow.md]
 ---
 
 # PID-0001-OC: Opportunity for an Engineering-as-Code (EoC) Baseline Workflow
