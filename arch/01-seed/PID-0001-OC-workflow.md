@@ -3,7 +3,7 @@ id: PID-0001-OC
 title: Opportunity for an Engineering-as-Code (EoC) Baseline Workflow
 phase: seed
 type: opportunity-canvas
-status: draft
+status: accepted
 created: 2026-10-24
 updated: 2026-10-24
 authors: ["criscarneirocwb"]
