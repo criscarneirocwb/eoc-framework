@@ -5,7 +5,7 @@ phase: seed
 type: opportunity-canvas
 status: accepted
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 authors: ["criscarneirocwb"]
 supersedes: null
 superseded_by: null
@@ -27,14 +27,14 @@ relations:
 
 ## 2. Solution Hypothesis
 * **Conceptual Approach:**
-  We hypothesize that establishing a lean, end-to-end baseline workflow—defining clear transition stages from strategic intent down to implementation, along with the purpose of artifacts generated at each stage—will provide the essential structure needed for both humans and autonomous agents to collaborate effectively. 
+  We hypothesize that establishing a lean, end-to-end baseline workflow—defining clear transition stages from strategic intent down to implementation, along with the purpose of artifacts generated at each stage (including exploratory Opportunity Canvases, Business Requirements, Product Requirements, and Project Decisions for internal operational governance)—will provide the essential structure needed for both humans and autonomous agents to collaborate effectively.
   
 * **Strategic Alignment:**
   Defining the baseline workflow is foundational to the EoC mission. It sets the operational standard for all subsequent development, ensuring every downstream initiative follows a consistent, verifiable path.
 
 ## 3. Success Metrics & KPIs
 * **Quantitative Targets:**
-  * Agreement on a core set of phases and artifact roles that cover the standard development lifecycle.
+  * Agreement on a core set of phases and artifact roles that cover the standard development lifecycle (including the addition of the Project Decision seed for repository operations).
   * A description of the mainstream workflow with its stages and expected artifacts.
 * **Validation Milestones:**
   * Authoring and submission of `RFC-0001-workflow-lifecycle` exploring the workflow mechanisms and transitions.

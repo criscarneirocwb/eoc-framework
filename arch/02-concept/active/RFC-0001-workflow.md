@@ -37,6 +37,7 @@ flowchart TD
         OC["Opportunity Canvas (OC)<br/>External / Market / Tech"]
         BR["Business Requirements (BRD)<br/>Regulatory / Industry / Legal"]
         PR["Product Requirements (PRD)<br/>Product / Functional / Refactor"]
+        PD["Project Decision (PD)<br/>Internal Project & Operational Rules"]
         OC -.->|Optional Trigger| BR
         BR -.->|Optional Trigger| PR
     end
@@ -72,6 +73,7 @@ flowchart TD
     OC --> RFC_Active
     BR --> RFC_Active
     PR --> RFC_Active
+    PD --> RFC_Active
 
     RFC_Active -->|Materializes| ADR
     ADR --> SPEC
@@ -101,6 +103,7 @@ flowchart TD
      * **Opportunity Canvas (`PID-XXXX-OC`):** Triggered by external market shifts, emerging technologies, or exploratory capabilities. Answers: *Should we pursue this, and what is the potential value?*
      * **Business Requirements Document (`PID-XXXX-BR`):** Triggered by industry regulations, legal compliance, tax laws, or commercial contracts. Answers: *What business and legal guardrails must be respected?*
      * **Product Requirements Document (`PID-XXXX-PR`):** Triggered directly by product needs, user journeys, deprecation cycles, or feature requests. Answers: *What functional capabilities and user behaviors must be delivered?*
+     * **Project Decision (`PID-XXXX-PD`):** Triggered by the need to establish, revise, or govern internal project operational rules, repository conventions, contributor guidelines, or documentation taxonomy. Answers: *What internal project policies or operational processes must govern how this repository is operated?*
      * *Chaining:* While an OC may trigger a BRD, and a BRD may trigger a PRD, chained progression is **not mandatory**. An initiative may enter directly at any seed type and progress straight to an RFC.
 
    * **`arch/02-concept/` (Debate & Exploration):**
