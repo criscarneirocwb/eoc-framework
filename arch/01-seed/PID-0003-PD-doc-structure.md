@@ -3,7 +3,7 @@ id: PID-0003-PD
 title: Project Decision for EoC Framework Documentation Structure
 phase: seed
 type: project-decision
-status: draft
+status: accepted
 created: 2026-10-25
 updated: 2026-10-25
 authors: ["criscarneirocwb"]
@@ -11,10 +11,10 @@ supersedes: null
 superseded_by: null
 keywords: [project-decision, documentation-structure, book, playbook, tools, runbook, seed]
 relations:
-  derives_from: []
-  governed_by: []
+  derives_from: ["arch/00-brainstorm/active/WBD-0002-eoc-framework-doc-structure.md"]
+  governed_by: ["arch/03-decisions/ADR-0001-doc-structure.md"]
   implements: []
-  affects: ["arch/02-concept/active/RFC-0003-doc-structure.md"]
+  affects: ["arch/02-concept/archive/RFC-0003-doc-structure.md"]
 ---
 
 # PID-0003-PD: Project Decision for EoC Framework Documentation Structure
