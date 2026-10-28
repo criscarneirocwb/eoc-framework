@@ -1,1 +1,16 @@
 project_name: "EoC Framework"
+
+documentation:
+  sections:
+    - name: "book"
+      path: "doc/book/"
+      description: "EoC Book - Theoretical methodology and wiki source of truth"
+    - name: "playbook"
+      path: "doc/playbook/"
+      description: "EoC Playbook - Practitioner guides and operational scenarios"
+    - name: "tools"
+      path: "doc/tools/"
+      description: "EoC Tooling - User manuals and CLI reference"
+    - name: "runbook"
+      path: ".eoc/profile/runbook/"
+      description: "EoC Runbook - Internal repository operational procedures"

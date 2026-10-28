@@ -1,4 +1,4 @@
-﻿version: "1.0.0"
+version: "1.0.0"
 project_name: "Engineering-as-Code (EoC) Framework"
 description: "Global domain taxonomy, component names, system acronyms, and glossary for automated agents and human engineering teams."
 
@@ -9,7 +9,7 @@ domains:
     categories:
       - id: "seed"
         description: "Exploratory discovery, business requirements, and product requirements (Project Initiative Documents)"
-        artifacts: ["PID-OC", "PID-BR", "PID-PR"]
+        artifacts: ["PID-OC", "PID-BR", "PID-PR", "PID-PD"]
       - id: "concept"
         description: "Exploratory proposals, RFCs, and spike evaluations"
         artifacts: ["RFC"]
@@ -37,15 +37,8 @@ domains:
         path: "tst/integration/"
 
   consumption:
-    description: "End-user manuals, operator guides, and external API documentation"
+    description: "Project documentation, user manuals, and knowledge base. Specific subdirectory layout is defined in .eoc/profile/project.yaml."
     path: "doc/"
-    sections:
-      - name: "guides"
-        path: "doc/guides/"
-      - name: "api-reference"
-        path: "doc/api-reference/"
-      - name: "operators-manual"
-        path: "doc/operators-manual/"
 
 glossary:
   - term: "Docs-as-Code"
@@ -53,7 +46,7 @@ glossary:
   - term: "Engineering-as-Code (EoC)"
     definition: "An extension of Docs-as-Code that governs the entire engineering lifecycle from strategy through architecture, design, testing, and implementation using machine-navigable artifacts."
   - term: "PID (Project Initiative Document)"
-    definition: "The unified seed artifact sequence (PID-XXXX-OC, PID-XXXX-BR, PID-XXXX-PR) that chronologically orders discovery, business guardrails, and product requirements under arch/01-seed/."
+    definition: "The unified seed artifact sequence (PID-XXXX-OC, PID-XXXX-BR, PID-XXXX-PR, PID-XXXX-PD) that chronologically orders discovery, business guardrails, product requirements, and project decisions under arch/01-seed/."
   - term: "Test Twin"
     definition: "The paired test specification document (TST-XXXX) that must be born alongside every software design document (SDD-XXXX) under arch/05-design/."
   - term: "Immutability Principle"
