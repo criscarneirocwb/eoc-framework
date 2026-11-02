@@ -3,18 +3,18 @@ id: RFC-0001
 title: Baseline Engineering-as-Code (EoC) Workflow Lifecycle
 phase: concept
 type: rfc
-status: proposed
+status: accepted
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-02
 authors: ["criscarneirocwb"]
 supersedes: null
 superseded_by: null
 keywords: [workflow, lifecycle, governance, eoc-framework, baseline, macro-pipeline]
 relations:
-  derives_from: ["arch/01-seed/PID-0001-OC-Workflow.md"]
+  derives_from: ["arch/01-seed/PID-0001-OC-workflow.md"]
   governed_by: []
   implements: []
-  affects: ["arch/03-decisions/ADR-0001-baseline-workflow.md"]
+  affects: ["arch/03-decisions/ADR-0003-baseline-workflow.md"]
 ---
 
 # RFC-0001: Baseline Engineering-as-Code (EoC) Workflow Lifecycle

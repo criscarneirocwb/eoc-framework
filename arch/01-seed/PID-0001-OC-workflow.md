@@ -5,7 +5,7 @@ phase: seed
 type: opportunity-canvas
 status: accepted
 created: 2026-10-24
-updated: 2026-10-25
+updated: 2026-11-02
 authors: ["criscarneirocwb"]
 supersedes: null
 superseded_by: null
@@ -14,7 +14,10 @@ relations:
   derives_from: []
   governed_by: []
   implements: []
-  affects: [arch/02-concept/active/RFC-0001-workflow.md]
+  affects: [
+    "arch/02-concept/archive/RFC-0001-workflow.md",
+    "arch/03-decisions/ADR-0003-baseline-workflow.md"
+  ]
 ---
 
 # PID-0001-OC: Opportunity for an Engineering-as-Code (EoC) Baseline Workflow
