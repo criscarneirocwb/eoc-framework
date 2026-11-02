@@ -125,15 +125,25 @@ flowchart TD
      * For **each distinct component**, a Software Design Document (`SDD-XXXX`) is paired with an exact numerical Test Twin (`TST-XXXX`).
      * `SDD-XXXX` details internal data models, state machines, and algorithms, directly feeding `src/`.
      * `TST-XXXX` defines the executable verification harness, evaluation benchmarks, and BDD assertions, directly feeding `tst/`.
-     * Low-level API contracts from `SDD` retro-feed `doc/api-reference`.
+     * Low-level API contracts and technical designs from `SDD` retro-feed consumption documentation in `doc/playbook/` and `doc/tools/`.
 
 ### 2.1 Issues, Defects, and Remediation Lifecycle
 
-A framework is only as good as its defect management. In the EoC framework, issues, bugs, regressions, and incidents are not tracked in an ad-hoc silo outside the architecture—they are formally integrated into the macro-pipeline:
+A framework is only as good as its defect management. In the EoC framework, issues, bugs, and regressions are not tracked in an ad-hoc silo outside the architecture—they are formally integrated into repository governance.
+
+#### Operational Urgency Triage
+Post-merge defects are evaluated by operational urgency before entering a workflow:
+* **Critical / Life-Threatening Emergencies (P0 / Outages / Active Breaches):**
+  If an issue poses an immediate risk to production availability, critical infrastructure, data integrity, or security where minutes matter, it leaves the standard pipeline and triggers the dedicated **Operational Incident Response Lifecycle (Incident Twins)** governed by [RFC-0002](RFC-0002-incident-workflow.md).
+* **Standard (Non-Life-Threatening) Defects:**
+  If an issue is not life-threatening (e.g., standard logic bugs, non-blocking crashes, regulatory omissions, or performance weaknesses), it strictly follows the standard macro-pipeline described below.
 
 ```mermaid
 flowchart TD
-    Issue["Post-Merge Issue / Defect Detected"] --> Triage{"Triage Nature of Issue"}
+    Issue["Post-Merge Issue / Defect Detected"] --> Urgency{"Operational Urgency?"}
+    
+    Urgency -->|"Critical / Outage / P0<br/>(Time is critical concern)"| RFC2["Emergency Lifecycle (RFC-0002)<br/>Incident Twins (OID-IR + OID-PM)"]
+    Urgency -->|"Standard / Non-Life-Threatening<br/>(Normal remediation)"| Triage{"Triage Nature of Issue"}
     
     Triage -->|"Functional crash / defect / incorrect behavior"| PRD["PID-XXXX-PR<br/>(Product Requirements)"]
     Triage -->|"Regulatory violation / compliance / legal gap"| BRD["PID-XXXX-BR<br/>(Business Requirements)"]
@@ -202,7 +212,10 @@ Every issue maps directly into one of the three canonical seeds based on the nat
 
 ## 5. Open Questions & Community Discussion
 
-The viability of the EoC framework depends on balancing architectural rigor with daily engineering reality. If the workflow proves too rigid or cumbersome for routine maintenance and incident remediation, developers and agents will find workarounds or abandon the methodology. 
+The viability of the EoC framework depends on balancing architectural rigor with daily engineering reality. If the workflow proves too rigid or cumbersome for routine maintenance and defect remediation, developers and agents will find workarounds or abandon the methodology.
+
+> [!NOTE]
+> Operational emergencies and P0 break-glass procedures have been formally decoupled from this RFC into [RFC-0002: Operational Incident Response Lifecycle and Incident Twins (OID)](RFC-0002-incident-workflow.md). The dilemmas below focus strictly on planned feature delivery and non-emergency defect remediation.
 
 We specifically open the following structural dilemmas for debate among collaborators:
 
@@ -211,24 +224,18 @@ We specifically open the following structural dilemmas for debate among collabor
    * For trivial bugs (e.g., a missing null check, an off-by-one index, an inverted boolean flag, or a minor CSS tweak), does requiring 5 separate documents across all governance tiers (`PRD -> RFC -> ADR -> SPEC -> SDD + TST`) impose unacceptable developer friction?
    * *Alternative to debate:* Should localized implementation bugs permit an **Atomic Remediation Record (ARR)**—a single consolidated document that bundles the root-cause assessment, remediation decision, targeted spec update, and test twin—while preserving the machine-navigable graph, or must each tier strictly remain an independent file?
 
-2. **Emergency Hotfixes & Break-Glass Procedures:**
-   * How should the framework respond during a severe P0 production incident or security vulnerability where minutes matter?
-   * Should there be a sanctioned "break-glass" procedure (e.g., deploy a hotfix immediately alongside a mandatory new failing-then-passing test twin in `tst/`, with a strict SLA to produce retroactive architectural documentation within 24–48 hours)?
-   * Or does providing a "break-glass" mechanism inevitably create a loophole that erodes framework discipline over time?
-   * *Active Investigation:* A dedicated exploration of an emergency incident workflow has been seeded to evaluate a formal fast-track with post-incident governance reconciliation. See [PID-0002-OC](arch/01-seed/PID-0002-OC-incident-workflow.md).
-
-3. **Artifact Proliferation vs. In-Place Evolution:**
+2. **Artifact Proliferation vs. In-Place Evolution:**
    * When fixing a bug in an existing component that is already governed by `SPEC-0002` and `SDD-0004` / `TST-0004`:
      * Do we generate **brand new numbered documents** (e.g., `SPEC-0010`, `SDD-0015`, `TST-0015`) for the fix?
      * Or do we **evolve the existing documents in-place** via version-controlled git diffs, updating `SDD-0004` and adding the new regression assertion directly to `TST-0004` while linking to the bug's seed/decision?
    * How do we avoid repository clutter across hundreds of lifetime defect remediations?
 
-4. **Human vs. Autonomous Agent Asymmetry:**
+3. **Human vs. Autonomous Agent Asymmetry:**
    * AI agents have infinite patience and can scaffold multiple governance artifacts in seconds, whereas human contributors face high cognitive friction when authoring ceremony documentation.
    * If automated tooling or agents handle the document generation, how do we prevent "rubber-stamping" reviews where human engineers approve generated specs without meaningful verification?
 
 ### 5.2 Governance & Tooling Questions
-5. **Automated Lineage Enforcement:**
+4. **Automated Lineage Enforcement:**
    * How should CI/CD pipelines programmatically enforce that any PR introducing code in `src/` or `tst/` has a valid upstream lineage traversing through `arch/05-design` back to an accepted `ADR` and `Seed`?
-6. **Operational & Housekeeping Updates:**
+5. **Operational & Housekeeping Updates:**
    * Are there zero-code operational updates (e.g., CI workflow configuration, repo housekeeping, template updates, documentation reformatting) that should follow a lighter governance track, or must all changes without exception produce an ADR?
