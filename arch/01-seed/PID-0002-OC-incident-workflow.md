@@ -11,7 +11,7 @@ supersedes: null
 superseded_by: null
 keywords: [opportunity-canvas, incident-response, hotfix, post-mortem, oid, governance, seed]
 relations:
-  derives_from: ["arch/00-brainstorm/brstrm-00001-alternative-incident-flow.md"]
+  derives_from: []
   governed_by: []
   implements: []
   affects: ["arch/02-concept/active/RFC-0002-incident-workflow.md"]

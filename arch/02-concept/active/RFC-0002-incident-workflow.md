@@ -11,7 +11,7 @@ supersedes: null
 superseded_by: null
 keywords: [incident-response, emergency-flow, hotfix, post-mortem, oid, governance, runbook]
 relations:
-  derives_from: ["arch/01-seed/PID-0002-OC-incident-workflow.md", "arch/00-brainstorm/active/brstrm-00001-alternative-incident-flow.md"]
+  derives_from: ["arch/01-seed/PID-0002-OC-incident-workflow.md"]
   governed_by: []
   implements: []
   affects: ["arch/03-decisions/ADR-0002-incident-lifecycle.md"]
@@ -115,7 +115,7 @@ Emergency handling is decoupled into two complementary documents located under `
 
 #### 5. Framework Mechanism vs. Project Runbook Policy
 * **Framework Role:** Establishes the folder layout (`arch/99-incidents/active|archive/`), frontmatter schemas, state transitions, and the immutable archival closure gate.
-* **Project Runbook Role:** Business criteria and operational policies are inherently domain-specific and must be defined in the project's operational runbook (`doc/operators-manual/runbook.md`), including:
+* **Project Runbook Role:** Business criteria and operational policies are inherently domain-specific and must be defined in the project's operational runbook (`.eoc/profile/runbook/` and project runbooks), including:
   * Qualification criteria: Defining what severity threshold (e.g., P0/P1, data loss, security CVE) authorizes the opening of an `OID-IR`.
   * Authorization roles: Who possesses authority to trigger an emergency bypass.
   * Resolution SLAs: Target turnaround timeframes for containment and post-mortem approval (e.g., PM approved within 48 to 72 hours of containment).
