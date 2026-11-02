@@ -3,8 +3,15 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-active%20development-orange.svg)](#status)
 [![AI-Ready](https://img.shields.io/badge/AI-Ready-brightgreen.svg)](#-ai-native--human-readable)
+[![Read the Book](https://img.shields.io/badge/Read%20the-EoC%20Book-blueviolet.svg)](doc/book/README.md)
+[![Book Summary](https://img.shields.io/badge/Book-Summary-informational.svg)](doc/book/SUMMARY.md)
 
 > **Engineering-as-Code (EoC)** is an open framework and methodology that unifies software engineering, architectural governance, and product lifecycle management into machine-navigable, human-readable repository artifacts.
+
+> [!TIP]
+> **Choose Your Path:**
+> * **Want to understand what this project is about?** Continue reading this `README` to learn about our objectives, repository architecture, dogfooding status, and how to contribute to the project.
+> * **Want to learn and apply the EoC Framework?** Head straight to [**The EoC Book**](doc/book/README.md) for a comprehensive, sequential guide to the methodology, lifecycle rules, and agent-first architecture (or browse the [Table of Contents](doc/book/SUMMARY.md)).
 
 ---
 
@@ -63,13 +70,15 @@ An EoC-compliant repository organizes governance, source code, tests, and docume
 │   ├── 01-seed/              # Strategic baselines, discovery, and requirements
 │   │   ├── PID-*-OC-*.md     # Opportunity Canvases (discovery & viability)
 │   │   ├── PID-*-BR-*.md     # Business Requirements (constraints & compliance)
-│   │   └── PID-*-PR-*.md     # Product Requirements (user flows & functional scope)
+│   │   ├── PID-*-PR-*.md     # Product Requirements (user flows & functional scope)
+│   │   └── PID-*-PD-*.md     # Project Decisions (repository rules & conventions)
 │   ├── 02-concept/           # Collaborative technical proposals and RFCs
 │   │   ├── active/           # Concepts actively debated
 │   │   └── archive/          # Concluded proposals (accepted / rejected)
 │   ├── 03-decisions/         # Immutable Architectural Decision Records (ADRs)
 │   ├── 04-specs/             # System-level specifications, boundaries & topologies
-│   └── 05-design/            # Component designs (SDDs) and paired test twins (TSTs)
+│   ├── 05-design/            # Component designs (SDDs) and paired test twins (TSTs)
+│   └── 99-incidents/         # Operational incident reports (IR) and post-mortems (PM)
 │
 ├── src/                      # Production source code
 ├── tst/                      # Executable test suites (unit, functional, integration)
@@ -80,7 +89,7 @@ An EoC-compliant repository organizes governance, source code, tests, and docume
 └── res/                      # Distributable framework assets and templates
 ```
 
-For the complete methodology, theory, and lifecycle rules, explore [**The EoC Book**](doc/book/README.md) (or consult [`.eoc/EoC.md`](file:///D:/criscarneirocwb/eoc-framework/.eoc/EoC.md)).
+For the complete methodology, theory, and lifecycle rules, explore [**The EoC Book**](doc/book/README.md) (or consult [`.eoc/EoC.md`](.eoc/EoC.md)).
 
 ---
 
@@ -88,12 +97,13 @@ For the complete methodology, theory, and lifecycle rules, explore [**The EoC Bo
 
 | Phase | Directory | Artifact Prefix | Purpose |
 | :--- | :--- | :--- | :--- |
-| **01 Seed** | `arch/01-seed/` | `PID-OC`, `PID-BR`, `PID-PR` | Strategic discovery, business requirements, and product scope |
+| **01 Seed** | `arch/01-seed/` | `PID-OC`, `PID-BR`, `PID-PR`, `PID-PD` | Strategic discovery, business requirements, product scope, and project rules |
 | **02 Concept** | `arch/02-concept/` | `RFC` | Exploratory proposals and RFC evaluations |
 | **03 Decisions** | `arch/03-decisions/` | `ADR` | Immutable log of architectural and technical decisions |
 | **04 Specs** | `arch/04-specs/` | `SPEC` | System architecture, runtime topologies, and data flows |
 | **05 Design** | `arch/05-design/` | `SDD` / `TST` | Low-level component specifications paired with test specs |
 | **Implementation** | `src/` & `tst/` | Source Code | Concrete code implementations and executable test harnesses |
+| **99 Incidents** | `arch/99-incidents/` | `OID-IR` / `OID-PM` | Operational incident triage, emergency hotfixes, and post-mortems |
 
 ---
 
