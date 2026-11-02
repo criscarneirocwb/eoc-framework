@@ -73,10 +73,14 @@ An EoC-compliant repository organizes governance, source code, tests, and docume
 │
 ├── src/                      # Production source code
 ├── tst/                      # Executable test suites (unit, functional, integration)
-└── doc/                      # End-user documentation, guides, and manuals
+├── doc/                      # Project documentation and knowledge architecture
+│   ├── book/                 # The EoC Book (Theoretical methodology & Wiki source)
+│   ├── playbook/             # Practical practitioner guides and scenarios
+│   └── tools/                # CLI and tool user manuals
+└── res/                      # Distributable framework assets and templates
 ```
 
-For the complete specification and artifact lifecycle rules, refer to [`.eoc/EoC.md`](file:///D:/criscarneirocwb/eoc-framework/.eoc/EoC.md).
+For the complete methodology, theory, and lifecycle rules, explore [**The EoC Book**](doc/book/README.md) (or consult [`.eoc/EoC.md`](file:///D:/criscarneirocwb/eoc-framework/.eoc/EoC.md)).
 
 ---
 
