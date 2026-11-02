@@ -3,18 +3,18 @@ id: RFC-0002
 title: Operational Incident Response Lifecycle and Incident Twins (OID)
 phase: concept
 type: rfc
-status: proposed
+status: accepted
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-02
 authors: ["criscarneirocwb"]
 supersedes: null
 superseded_by: null
 keywords: [incident-response, emergency-flow, hotfix, post-mortem, oid, governance, runbook]
 relations:
   derives_from: ["arch/01-seed/PID-0002-OC-incident-workflow.md"]
-  governed_by: []
+  governed_by: ["arch/03-decisions/ADR-0003-baseline-workflow.md"]
   implements: []
-  affects: ["arch/03-decisions/ADR-0002-incident-lifecycle.md"]
+  affects: ["arch/03-decisions/ADR-0004-incident-lifecycle.md"]
 ---
 
 # RFC-0002: Operational Incident Response Lifecycle and Incident Twins (OID)

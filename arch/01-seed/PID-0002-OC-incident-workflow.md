@@ -3,9 +3,9 @@ id: PID-0002-OC
 title: Opportunity for an Emergency Incident Response Lifecycle (OID)
 phase: seed
 type: opportunity-canvas
-status: draft
+status: accepted
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-02
 authors: ["criscarneirocwb"]
 supersedes: null
 superseded_by: null
@@ -14,7 +14,10 @@ relations:
   derives_from: []
   governed_by: []
   implements: []
-  affects: ["arch/02-concept/active/RFC-0002-incident-workflow.md"]
+  affects: [
+    "arch/02-concept/archive/RFC-0002-incident-workflow.md",
+    "arch/03-decisions/ADR-0004-incident-lifecycle.md"
+  ]
 ---
 
 # PID-0002-OC: Opportunity for an Emergency Incident Response Lifecycle (OID)
