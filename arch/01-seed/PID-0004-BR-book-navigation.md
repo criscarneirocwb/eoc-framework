@@ -5,16 +5,16 @@ phase: seed
 type: brd
 status: accepted
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-01
 authors: ["criscarneirocwb"]
 supersedes: null
 superseded_by: null
 keywords: [business-requirements, book-navigation, information-architecture, user-experience, documentation, seed]
 relations:
   derives_from: []
-  governed_by: ["arch/03-decisions/ADR-0001-doc-structure.md"]
+  governed_by: ["arch/03-decisions/ADR-0001-doc-structure.md", "arch/03-decisions/ADR-0002-book-structure.md"]
   implements: []
-  affects: ["arch/02-concept/active/RFC-0004-book-structure.md"]
+  affects: ["arch/02-concept/archive/RFC-0004-book-structure.md"]
 ---
 
 # PID-0004-BR: Business Requirements for EoC Book Navigation and Information Architecture

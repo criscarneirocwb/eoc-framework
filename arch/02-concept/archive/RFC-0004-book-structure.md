@@ -3,9 +3,9 @@ id: RFC-0004
 title: EoC Framework Book Navigation Architecture and Thematic Structure
 phase: concept
 type: rfc
-status: proposed
+status: accepted
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-01
 authors: ["criscarneirocwb"]
 supersedes: null
 superseded_by: null
@@ -14,7 +14,7 @@ relations:
   derives_from: ["arch/01-seed/PID-0004-BR-book-navigation.md"]
   governed_by: ["arch/03-decisions/ADR-0001-doc-structure.md"]
   implements: []
-  affects: ["arch/03-decisions/ADR-0004-book-structure.md"]
+  affects: ["arch/03-decisions/ADR-0002-book-structure.md"]
 ---
 
 # RFC-0004: EoC Framework Book Navigation Architecture and Thematic Structure
